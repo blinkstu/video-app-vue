@@ -37,6 +37,10 @@ var routes = [
     props: true
   },
   {
+    path: '/user/promotion',
+    component: () => import('./pages/Promotion')
+  },
+  {
     path: "/user/register",
     component: () => import("./pages/Register")
   },

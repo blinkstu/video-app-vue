@@ -8,9 +8,9 @@ html {
   -ms-user-select: none; /* IE10+/Edge */
   user-select: none; /* Standard */
 }
-html{
+html {
 }
-body.desktop{
+body.desktop {
   max-width: 400px;
   width: 400px;
   margin: 1em auto;
@@ -36,6 +36,10 @@ body.desktop{
   overflow-y: scroll;
   display: block;
   position: relative;
+  background: white;
+}
+.page.grey {
+  background: #f4f4f4;
 }
 .tab-left-enter {
   opacity: 0;
@@ -177,7 +181,6 @@ body {
       width: 1.6em;
     }
     .more {
-      width: 40px;
       font-size: 12px;
       display: flex;
       span {
@@ -285,7 +288,7 @@ div::-webkit-scrollbar {
     margin-top: 44px;
     box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.16);
     border-radius: 5px;
-    z-index:2;
+    z-index: 2;
     position: relative;
   }
   .profile {
@@ -494,27 +497,54 @@ div::-webkit-scrollbar {
   position: absolute;
   left: 15px;
   top: 15px;
-  svg{
+  svg {
     height: 1.3em !important;
     width: 1.3em !important;
   }
 }
 
-
-.text-align-center{
+.text-align-center {
   text-align: center;
 }
-.text-color-gray{
+.text-color-gray {
   color: #777;
 }
 
-.van-tabbar--fixed{
+.van-tabbar--fixed {
   position: absolute !important;
   z-index: 1999 !important;
 }
 
-.main-content{
+.main-content {
   position: relative;
   z-index: 2;
+}
 
+.card {
+  margin: 10px 15px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  min-height: 20vh;
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, 0.16);
+  .card-header {
+    padding: 10px;
+    color: #777;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  .card-body {
+    padding: 10px;
+  }
+}
+
+.promotion-link {
+  text-align: center;
+  input {
+    border: 1px solid #eee;
+    padding: 5px;
+  }
+}
+
+.promotion-card{
+  text-align: center;
 }

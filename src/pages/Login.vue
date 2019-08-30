@@ -61,8 +61,10 @@ export default {
       toast.clear();
       if (result) {
         localStorage.setItem("token", result.data.token);
-        this.$store.dispatch("app/getUserInfo");
-        this.$router.back()
+        await this.$store.dispatch("app/getUserInfo");
+        if(this.back){
+          this.$router.back()
+        }
       }
     }
   },

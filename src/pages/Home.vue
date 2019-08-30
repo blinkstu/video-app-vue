@@ -10,19 +10,19 @@
         <swiper :options="swiperOption">
           <swiper-slide>
             <img
-              src="https://liangcang-material.alicdn.com/prod/upload/a4aefa24f5b9456e8b69200e40f19658.jpg?x-oss-process=image/resize,w_1242/format,webp/interlace,1"
+              src="https://liangcang-material.alicdn.com/prod/upload/a4aefa24f5b9456e8b69200e40f19658.jpg"
               alt
             />
           </swiper-slide>
           <swiper-slide>
             <img
-              src="https://liangcang-material.alicdn.com/prod/upload/36d3d91bda44486a8ad27ec1a22c7d5e.jpg?x-oss-process=image/resize,w_1242/format,webp/interlace,1"
+              src="https://liangcang-material.alicdn.com/prod/upload/36d3d91bda44486a8ad27ec1a22c7d5e.jpg"
               alt
             />
           </swiper-slide>
           <swiper-slide>
             <img
-              src="https://liangcang-material.alicdn.com/prod/upload/b4a62fce9c104bd7b2fe8a3f196068ae.jpg?x-oss-process=image/resize,w_1242/format,webp/interlace,1"
+              src="https://liangcang-material.alicdn.com/prod/upload/b4a62fce9c104bd7b2fe8a3f196068ae.jpg"
               alt
             />
           </swiper-slide>

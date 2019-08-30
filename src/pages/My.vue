@@ -58,7 +58,7 @@
               </div>
             </template>
           </van-cell>
-          <van-cell is-link>
+          <van-cell @click="$router.push('/user/promotion')" is-link>
             <template slot="default">
               <div class="custom-inner">
                 <div class="icon">
