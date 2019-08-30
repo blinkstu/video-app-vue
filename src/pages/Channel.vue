@@ -10,7 +10,7 @@
       <div class="blocks">
         <div class="item" @click="$f7router.navigate('/detail/123')" v-for="item in secondaryList" :key="item.id">
           <div class="image">
-            <img :src="image(item.thumbnail)" alt />
+            <img :src="$store.image(item.thumbnail)" alt />
           </div>
           {{item.name}}
         </div>
@@ -40,9 +40,6 @@ export default {
     select(index){
       this.currentSelected = index;
       this.secondaryList = this.categoryList[index].children;
-    },
-    image(url) {
-      return "http://192.168.100.10/" + 'upload/' + url;
     }
   },
   created() {
