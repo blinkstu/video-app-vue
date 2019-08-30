@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="909px" height="383px" viewBox="0 0 909 383" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>Path 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50%" cy="0%" fx="50%" fy="0%" r="173.194499%" gradientTransform="translate(0.500000,0.000000),scale(0.420344,1.000000),rotate(46.622607),translate(-0.500000,-0.000000)" id="radialGradient-1">
+            <stop stop-color="#C73880" offset="0%"></stop>
+            <stop stop-color="#8B2083" offset="100%"></stop>
+        </radialGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M0.000113263487,1.41051889 L908.661796,0.382417092 L908.661796,306.439976 C827.138639,355.565796 675.695207,380.844346 454.3315,382.275627 C232.967793,383.706907 81.5239973,358.428357 0.000113263487,306.439976 L0.000113263487,1.41051889 Z" id="Path-4" fill="url(#radialGradient-1)"></path>
+    </g>
+</svg>

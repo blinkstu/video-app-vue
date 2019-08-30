@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="158px" height="158px" viewBox="0 0 158 158" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>收藏</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="收藏" fill="#999999">
+            <path d="M24,0 L134,0 C147.254834,-2.4348735e-15 158,10.745166 158,24 L158,134 C158,147.254834 147.254834,158 134,158 L24,158 C10.745166,158 5.17596268e-15,147.254834 0,134 L0,24 C-1.623249e-15,10.745166 10.745166,5.98758718e-15 24,0 Z M79.5,100.140869 L110.358726,121.973392 L99.1306331,85.8783793 L129.430467,63.2766078 L91.6323985,62.8011861 L79.5,27 L67.3676015,62.8011861 L29.5695329,63.2766078 L59.8693669,85.8783793 L48.6412743,121.973392 L79.5,100.140869 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>
