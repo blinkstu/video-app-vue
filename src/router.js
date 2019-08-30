@@ -53,8 +53,8 @@ var routes = [
     component: () => import("./pages/Settings")
   },
   {
-    path: "/dynamic-route/blog/:blogId/post/:postId/",
-    component: () => import("./pages/dynamic-route")
+    path: '/user/recharge',
+    component: () => import("./pages/Recharge")
   },
   {
     path: "(.*)",

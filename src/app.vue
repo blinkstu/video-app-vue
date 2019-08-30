@@ -75,8 +75,7 @@ export default {
     if (token) {
       const loginToast = Toast.loading({
         duration: 0,
-        forbidClick: true,
-        loadingType: "spinner"
+        forbidClick: true
       });
       var result = await this.$store.dispatch("app/getUserInfo");
       loginToast.clear();

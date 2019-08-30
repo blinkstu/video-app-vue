@@ -1,6 +1,6 @@
 <template>
   <div class="page my">
-    <Login v-if="!loged" />
+    <Login v-if="!loged" :back="false"/>
     <div class="page" v-if="loged">
       <div class="home-top"></div>
       <div class="cogs" @click="$router.push('/user/settings')">
@@ -20,7 +20,7 @@
           </div>
         </div>
         <div class="divider"></div>
-        <div class="vip-box">
+        <div class="vip-box" @click="$router.push('/user/recharge')">
           <span>开通VIP，畅想更多权益</span>
           <div class="button">升级VIP</div>
         </div>

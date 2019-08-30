@@ -20,8 +20,8 @@
       </van-cell-group>
     </div>
     <br />
-    <div @click="doLogin" class="login-button">登陆</div>
-    <br />
+    <div @click="doLogin" class="login-button" :class="{loading:loading}"> <van-loading v-if="loading" color="#932382" type="spinner" size="22px" /> <span v-else>登陆</span></div>
+  <br />
     <div class="do-register">
       没有账号？
       <a @click="$router.push('/user/register')" href="javascript:;">立即注册</a>
@@ -38,27 +38,25 @@ export default {
     return {
       username: null,
       password: null,
-      device_type: "web"
+      device_type: "web",
+      loading: false
     };
   },
   props: {
     back: {
-      type: Boolean
+      type: Boolean,
+      default: true
     }
   },
   methods: {
     async doLogin() {
-      var toast = Toast.loading({
-        duration: 0,
-        forbidClick: true,
-        loadingType: "spinner"
-      });
+      this.loading = true;
       var result = await post("/video/public/login", {
         username: this.username,
         password: this.password,
         device_type: "web"
       });
-      toast.clear();
+      this.loading = false;
       if (result) {
         localStorage.setItem("token", result.data.token);
         await this.$store.dispatch("app/getUserInfo");
