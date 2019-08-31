@@ -53,8 +53,20 @@ var routes = [
     component: () => import("./pages/Settings")
   },
   {
+    name: 'Recharge',
     path: '/user/recharge',
-    component: () => import("./pages/Recharge")
+    component: () => import("./pages/Recharge"),
+    meta: {
+      keepAlive: true
+    }
+  },
+  {
+    path: '/user/orders',
+    component: () => import("./pages/Orders")
+  },
+  {
+    path: '/user/pay_order/:out_trade_no',
+    component: () => import('./pages/PayOrder')
   },
   {
     path: "(.*)",

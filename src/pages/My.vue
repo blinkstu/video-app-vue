@@ -35,7 +35,7 @@
               </div>
             </template>
           </van-cell>
-          <van-cell is-link>
+          <van-cell @click="$router.push('/user/orders')" is-link>
             <template slot="default">
               <div class="custom-inner">
                 <div class="icon">

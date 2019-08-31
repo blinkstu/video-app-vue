@@ -75,7 +75,8 @@ service.interceptors.response.use(
     }
   },
   error => {
-    var request_toast = Toast(error.message);
+    console.log(error.message);
+    var request_toast = Toast('网络异常');
     return false
   }
 )
