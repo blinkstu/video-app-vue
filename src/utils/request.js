@@ -62,13 +62,8 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   res => {
     res = res.data;
-    if (res.code !== 1) {
-      if (res.message === 'Auth failed') {
-        return false
-      }
-
+    if (res.code == 0) {
       var request_toast = Toast(res.msg);
-
       return false
     } else {
       return res

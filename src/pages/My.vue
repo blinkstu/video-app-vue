@@ -16,13 +16,17 @@
           </div>
           <div class="info">
             <div class="username">{{userInfo.user_nickname}}</div>
-            <div class="data">普通会员</div>
+            <div class="data">{{vipName}}</div>
           </div>
         </div>
         <div class="divider"></div>
-        <div class="vip-box" @click="$router.push('/user/recharge')">
+        <div class="vip-box" v-if="!vip" @click="$router.push('/user/recharge')">
           <span>开通VIP，畅想更多权益</span>
           <div class="button">升级VIP</div>
+        </div>
+        <div class="vip-box" v-if="vip" @click="$router.push('/user/recharge')">
+          <span>已经开通 {{vipName}}</span>
+          <div class="button">续费VIP</div>
         </div>
         <van-cell-group :border="false" class="custom-list">
           <van-cell is-link>
@@ -45,7 +49,7 @@
               </div>
             </template>
           </van-cell>
-          <van-cell is-link>
+          <van-cell is-link @click="$router.push('/user/distribution')">
             <template slot="default">
               <div class="custom-inner">
                 <div class="icon">
@@ -88,6 +92,28 @@ export default {
   computed: {
     storeUserInfo() {
       return this.$store.state.app.userInfo;
+    },
+    vip(){
+      var vip = this.storeUserInfo.vip;
+      if(vip){
+        var expireTime = vip.expire_time * 1000;
+        var currentTime = new Date();
+        if(vip.infinite == 1){
+          return vip;
+        }
+        if(expireTime < currentTime){
+          return false;
+        }
+        return vip;
+      }
+      return null
+    },
+    vipName(){
+      if(this.vip){
+        return this.vip.vip_level_name + '会员';
+      } else {
+        return '普通会员'
+      }
     }
   },
   watch: {

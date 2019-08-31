@@ -12,7 +12,13 @@
         </van-cell-group>
         <br />
         <br />
-        <a @click="handlePay" target="_blank" style="display:block;" v-bind:href="payUrl" class="login-button">确认支付</a>
+        <a
+          @click="handlePay"
+          target="_blank"
+          style="display:block;"
+          v-bind:href="payUrl"
+          class="login-button"
+        >确认支付</a>
       </div>
     </div>
   </div>
@@ -27,19 +33,36 @@ export default {
       payUrl: null,
       show: false,
       order: null,
-      toast: null
+      toast: null,
+      stop: false
     };
   },
   methods: {
-    handlePay(){
-      if(!this.toast){
-      this.toast = Toast.loading({
-        duration: 0,       // 持续展示 toast
-        message: '请在弹出网页中完成支付'
-      });
+    async queryOrder() {
+      if (this.stop == true) {
+        return false;
       }
- 
-
+      var that = this;
+      var result = await get("/video/order/order_query", {
+        out_trade_no: this.$route.params.out_trade_no
+      });
+      if (result && result.code == 1) {
+        Toast("支付成功！");
+        this.toast.clear();
+        await this.$store.dispatch("app/getUserInfo");
+        that.$router.go(-2);
+      } else {
+        setTimeout(that.queryOrder, 3000);
+      }
+    },
+    handlePay() {
+      if (!this.toast) {
+        this.toast = Toast.loading({
+          duration: 0, // 持续展示 toast
+          message: "请在弹出网页中完成支付"
+        });
+        this.queryOrder();
+      }
     },
     async init() {
       var result = await get("/video/order/order_pay", {
@@ -56,9 +79,10 @@ export default {
   mounted() {
     this.init();
   },
-  beforeDestroy(){
-    this.toast.clear();
-    this.toast = null;
+  beforeDestroy() {
+    if (this.toast) {
+      this.toast.clear();
+    }
   }
 };
 </script>

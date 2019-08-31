@@ -61,6 +61,18 @@ var routes = [
     }
   },
   {
+    path: '/user/promotion/reward_log',
+    component: () => import ('./pages/RewardLog')
+  },
+  {
+    path: '/user/distribution',
+    component: () => import('./pages/Distribution')
+  },
+  {
+    path: '/user/distribution/commission',
+    component: () => import('./pages/Commission')
+  },
+  {
     path: '/user/orders',
     component: () => import("./pages/Orders")
   },

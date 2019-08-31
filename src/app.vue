@@ -2,7 +2,7 @@
   <!-- App -->
   <div class="page" style="overflow:hidden;">
     <!-- Main View -->
-    <transition :name="transitionName">
+    <transition v-if="show" :name="transitionName">
       <keep-alive :include="include">
         <router-view />
       </keep-alive>

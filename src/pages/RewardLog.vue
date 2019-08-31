@@ -1,13 +1,12 @@
 <template>
   <div class="page orders">
-    <van-nav-bar left-arrow @click-left="$router.back()" title="消费记录" />
+    <van-nav-bar left-arrow @click-left="$router.back()" title="奖励记录" />
     <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="init()">
       <van-cell
         v-for="item in orders"
         :key="item.id"
-        :title="'购买项目 '+item.item1.name + ' ¥' + item.amount"
-        :value="states(item.status)"
-        :label="' ' +$store.time(item.create_time)"
+        :title="item.content"
+        :value="$store.time(item.create_time)"
       />
     </van-list>
   </div>
@@ -35,7 +34,7 @@ export default {
     },
     async init() {
       this.page += 1;
-      var result = await get("/video/order/order_list", {
+      var result = await get("/video/promotion/user_promotion_log", {
         page: this.page,
         limit: this.limit
       });

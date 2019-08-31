@@ -1,23 +1,35 @@
 <template>
-  <div class="page promotion grey">
-    <van-nav-bar left-arrow @click-left="$router.back()" title="宣传推广" />
+  <div class="page distribution grey">
+    <van-nav-bar left-arrow @click-left="$router.back()" title="分销赚钱" />
     <div class="card">
-      <div class="card-header">我的信息</div>
+      <div class="card-header">分销信息</div>
       <div class="card-body">
         <van-cell-group :border="false">
-          <van-cell title="查看奖励明细" is-link @click="$router.push('/user/promotion/reward_log')"></van-cell>
-          <van-cell title="当前已推广人数" :value="promotion_count"></van-cell>
+          <van-cell title="下级人数" is-link value="20人"></van-cell>
+          <van-cell
+            title="提成百分比"
+            @click="$router.push('distribution/commission')"
+            is-link
+            value="20%"
+          ></van-cell>
+          <van-cell title="提成收入记录" is-link></van-cell>
         </van-cell-group>
-        <div class="description-text">
-          每推广成功一人，即可获得1小时体验会员
-        </div>
-        <div class="description-text">
-          推广人数达到99人即可享受20%下级会员提成，VIP会员享受35%提成
-        </div>
       </div>
-    </div> 
+    </div>
+
     <div class="card">
-      <div class="card-header">推广链接</div>
+      <div class="card-header">收入信息</div>
+      <div class="card-body">
+        <van-cell-group :border="false">
+          <van-cell title="账户余额" value="¥200"></van-cell>
+          <van-cell title="累计收入金额" value="¥200"></van-cell>
+          <van-cell title="立即提现" is-link></van-cell>
+        </van-cell-group>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">下级推广链接</div>
       <div class="card-body promotion-card">
         <div class="promotion-link">
           <input type="text" :value="url" />
@@ -30,7 +42,7 @@
 </template>
 
 <script>
-import { post,get } from "@/utils/api";
+import { post, get } from "@/utils/api";
 import { Toast } from "vant";
 export default {
   data() {
@@ -45,16 +57,11 @@ export default {
         duration: 0
       });
       var result = await post("/video/promotion/code");
-      var result2 = await get("/video/promotion/promotion_info")
       toast.clear();
       if (result) {
         this.url = result.data;
         this.$clipboard(this.url);
       }
-      if(result2){
-        this.promotion_count = result2.data.promotion_count;
-      }
-
     },
     copyLink() {
       var result = this.$clipboard(this.url);

@@ -17,6 +17,14 @@ import router from './router';
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
+//倒计时
+import VueCountdownTimer from 'vuejs-countdown-timer'
+Vue.use(VueCountdownTimer)
+
+//粘贴
+import Clipboard from 'v-clipboard'
+Vue.use(Clipboard)
+
 //组件
 Vue.component("svg-icon", SvgIcon);
 Vue.component("video-card", VideoCard);

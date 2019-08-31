@@ -39,7 +39,7 @@ body.desktop {
   background: white;
 }
 .page.grey {
-  background: #f4f4f4;
+  background: #f4f4f4;;
 }
 .tab-left-enter {
   opacity: 0;
@@ -569,4 +569,16 @@ div::-webkit-scrollbar {
 span.price {
   float: right;
   color: #ff7676;
+}
+
+.count-down {
+  color: #969799;
+  text-align: right;
+}
+
+.description-text {
+  font-size: 12px;
+  margin: 10px 13px;
+  text-align: left;
+  color: #777;
 }

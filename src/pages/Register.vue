@@ -31,10 +31,22 @@ export default {
       nickname: null,
       password: null,
       re_password: null,
-      codeLoading: false
+      codeLoading: false,
+      invite_code: null
     };
   },
   methods: {
+    getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return pair[1];
+        }
+      }
+      return false;
+    },
     async getVerifyCoce() {
       this.codeLoading = true;
       var result = await get("/video/verification_code/send", {
@@ -54,7 +66,8 @@ export default {
         username: this.username,
         verification_code: this.sms,
         password: this.password,
-        nickname: this.nickname
+        nickname: this.nickname,
+        invite_code: this.invite_code
       });
       if (result) {
         Toast("注册成功！");
@@ -63,6 +76,12 @@ export default {
         this.$router.push("/my");
       }
     }
-  }
+  },
+  mounted() {
+    var invite_code = this.getQueryVariable('ic');
+    if(invite_code){
+      this.invite_code = invite_code
+    }
+  },
 };
 </script>

@@ -1,12 +1,14 @@
 <template>
   <f7-page>
-    <f7-navbar title="Not found" back-link="Back"></f7-navbar>
-    <f7-block strong>
-      <p>Sorry</p>
-      <p>Requested content not found.</p>
-    </f7-block>
+    <van-nav-bar left-arrow @click-left="$router.back()" title="错误404" />
+    <div class="page grey">
+      <div style="margin: 20px;">
+        <p>很抱歉</p>
+        <p>没有找到内容</p>
+      </div>
+    </div>
   </f7-page>
 </template>
 <script>
-  export default {};
+export default {};
 </script>
